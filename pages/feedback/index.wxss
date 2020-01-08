@@ -1,0 +1,64 @@
+/* pages/feedback/index.wxss */
+page{
+	background-color: #eee;
+}
+.fb-main{
+	display: flex;
+	padding: 20rpx;
+	flex-direction: column;
+	color: #666;
+}
+.fb-title{
+	padding: 20 rpx 0;
+}
+.fb-tips{
+	display: flex;
+	flex-wrap: wrap;
+}
+.fb-tips text{
+	padding: 10rpx 20rpx;
+	background-color: #fff;
+	width: 30%;
+	margin: 20rpx 10rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24rpx;
+	border-radius: 10rpx;
+}
+.fb-content{
+	background-color: #fff;
+	padding: 10rpx;
+}
+.fb-content textarea{
+	padding: 10rpx;
+}
+.fb-tool{
+	display: flex;
+	flex-wrap: wrap;
+}
+.fb-tool button{
+	width: 80rpx;
+	height: 80rpx;
+	padding: 0;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: auto;
+	margin: 0;
+	color: #666;
+	margin-top: 20rpx;
+}
+.fb-up-img{
+	margin-left: 20rpx;
+	margin-top: 20rpx;
+}
+.fb-form-submit{
+	margin-top: 20rpx;
+}
+.fb-form-submit button{
+	background-color: var(--themeColor);
+	color: #fff;
+	width: 100%;
+}

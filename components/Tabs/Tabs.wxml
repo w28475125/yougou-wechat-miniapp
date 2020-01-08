@@ -1,0 +1,14 @@
+<!-- 标签 -->
+<view class="tabs-list">
+	<view 
+	class="tabs-item {{ item.ischecked ? 'active' : '' }}" 
+	wx:for="{{tabsData}}" 
+	wx:key="{{item.id}}"
+	data-index="{{index}}"
+	bindtap="handleCahngeTabs"
+	>{{item.title}}</view>
+</view>
+<!-- 内容 -->
+<view class="tabs-content">
+	<slot></slot>
+</view>

@@ -1,0 +1,39 @@
+<view class="index">
+	<SearchInput></SearchInput>
+
+	<view class="index-swiper">
+		<swiper autoplay indicator-dots circular>
+			<swiper-item wx:for="{{swiperList}}" wx:key="{{item.goods_id}}">
+				<navigator url="{{item.navigator_url}}">
+					<image mode="widthFix" src="{{item.image_src}}"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</view>
+	
+	<!-- 导航 -->
+	<view class="index-cate">
+		<navigator wx:for="{{cateList}}" wx:key="{{item.image_src}}" url="/pages/category/index" open-type="switchTab">
+			<image mode="widthFix" src="{{item.image_src}}"></image>
+		</navigator>
+	</view>
+
+	<!-- 楼层 -->
+	<view class="index-floor">
+		<view class="floor-group" wx:for="{{floorList}}" wx:key="{{item.floor_title.image_src}}">
+			<view class="floor-title">
+				<image mode="widthFix" src="{{item.floor_title.image_src}}"></image>
+			</view>
+			<view class="floor-list">
+					<navigator
+						wx:for="{{item.product_list}}"
+						wx:for-item="product"
+						wx:for-index="product_index"
+						wx:key="{{product.image_src}}"
+						url="{{product.navigator_url}}">
+						<image mode="{{product_index==0?'widthFix':'scaleToFill'}}" src="{{product.image_src}}"></image>
+					</navigator>
+				</view>
+		</view>
+	</view>
+</view>

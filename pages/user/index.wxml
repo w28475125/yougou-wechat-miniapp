@@ -1,0 +1,71 @@
+<view class="user-info">
+	<navigator url="/pages/login/index" class="login-btn" wx:if="{{!userInfo.language}}">登录</navigator>
+	<block wx:else>
+		<view class="user-big-img">
+			<image mode="scaleToFill" src="{{userInfo.avatarUrl}}"></image>
+		</view>
+		<view class="user-info-row">
+			<image src="{{userInfo.avatarUrl}}"></image>
+			<view class="user-name">{{userInfo.nickName}}</view>
+		</view>
+	</block>
+</view>
+
+<view class="user-content">
+	<view class="user-main">
+		<!-- 历史足迹 -->
+		<view class="history-wrap marB10">
+			<navigator>
+				<view class="his-num">0</view>
+				<view class="his-name">收藏的店铺</view>
+			</navigator>
+			<navigator url="/pages/collect/index">
+				<view class="his-num">{{collectNum}}</view>
+				<view class="his-name">收藏的商品</view>
+			</navigator>
+			<navigator>
+				<view class="his-num">0</view>
+				<view class="his-name">关注的店铺</view>
+			</navigator>
+			<navigator>
+				<view class="his-num">0</view>
+				<view class="his-name">我的足迹</view>
+			</navigator>
+		</view>
+		<!-- 我的订单 -->
+		<view class="my-order marB10">
+			<view class="my-order-title">我的订单</view>
+			<view class="my-order-wrap">
+				<navigator url="/pages/order/index?type=1">
+					<view class="iconfont icondd"></view>
+					<view>全部订单</view>
+				</navigator>
+				<navigator url="/pages/order/index?type=2">
+					<view class="iconfont iconfukuantongzhi"></view>
+					<view>待付款</view>
+				</navigator>
+				<navigator url="/pages/order/index?type=3">
+					<view class="iconfont iconshouhuodizhi"></view>
+					<view>待收货</view>
+				</navigator>
+				<navigator>
+					<view class="iconfont icontuikuan"></view>
+					<view>退款/退货</view>
+				</navigator>
+			</view>
+		</view>
+		<!-- 收货地址管理 -->
+		<view class="address-manage marB10">收货地址管理</view>
+		<!-- 客服/意见/关于我们 -->
+		<view class="marB10 service-wrap">
+			<view class="address-manage service-wrap-tel">
+				<view>联系客服</view>
+				<view>400-618-4000</view>
+			</view>
+			<navigator url="/pages/feedback/index" class="address-manage">意见反馈</navigator>
+			<view class="address-manage">关于我们</view>
+		</view>
+		<!-- 收货地址管理 -->
+		<view class="address-manage">把应用推荐给其他人</view>
+	</view>
+</view>

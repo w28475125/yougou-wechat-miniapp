@@ -1,0 +1,113 @@
+/* pages/user/index.wxss */
+page {
+	background-color: #ededed;
+	height: 100vh;
+}
+.marB10{
+	margin-bottom: 10rpx;
+}
+.user-info{
+	height: 40vh;
+	position: relative;
+	background-color: var(--themeColor);
+}
+.login-btn{
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translateX(-50%) translateY(-80%);
+	border: 1rpx solid #ccc;
+	border-radius: 10rpx;
+	padding: 20rpx 40rpx;
+	color: #fff;
+	font-size: 35rpx;
+}
+.user-big-img{
+	height: 100%;
+	overflow: hidden;
+}
+.user-big-img image{
+	width: 100%;
+	height: 100%;
+	filter: blur(10rpx);
+	transform: scale(1.2);
+}
+.user-info-row{
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.user-info-row image{
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 50%;
+}
+.user-info-row .user-name{
+	color: #fff;
+	font-size: 32rpx;
+	margin-top: 15rpx;
+}
+
+.user-content{
+	position: relative;
+}
+.user-main{
+	width: 90%;
+	color: #666;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -50rpx;
+}
+.history-wrap{
+	background-color: #fff;
+	display: flex;
+	padding: 20rpx 0;
+}
+.history-wrap navigator{
+	flex: 1;
+	text-align: center;
+}
+.history-wrap navigator .his-num{
+	color: var(--themeColor);
+}
+
+.my-order{
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+}
+.my-order-title{
+	padding: 20rpx 15rpx;
+	border-bottom: 1rpx solid #ccc;
+}
+.my-order-wrap{
+	display: flex;
+}
+.my-order-wrap navigator{
+	flex: 1;
+	text-align: center;
+	padding: 15rpx 5rpx;
+}
+.my-order-wrap navigator .iconfont{
+	color: var(--themeColor);
+	font-size: 40rpx;
+}
+
+.address-manage{
+	background-color: #fff;
+	padding: 20rpx 15rpx;
+}
+
+.service-wrap .address-manage{
+	border-bottom: 1rpx solid #ccc;
+}
+.service-wrap .address-manage.service-wrap-tel{
+	display: flex;
+	justify-content: space-between;
+}

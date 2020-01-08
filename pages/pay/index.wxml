@@ -1,0 +1,40 @@
+<view>
+	<view class="address-row">
+		<view class="address-title">
+			<view class="address-name">{{addRess.userName}}</view>
+			<view class="address-iphone">{{addRess.telNumber}}</view>
+		</view>
+		<view class="address-address">{{addRess.allAddress}}</view>
+	</view>
+</view>
+
+<view class="cart-list">
+	<view class="cart-title">购物车</view>
+	<view class="cart-row">
+		<view class="cart-item" wx:for="{{cartData}}" wx:key="{{item.id}}">
+			<view class="good-img">
+				<image mode="widthFix" src="{{item.image ? item.image : 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+			</view>
+			<view class="good-info">
+				<view class="good-title">{{item.name}}</view>
+				<view class="good-row">
+					<view class="good-price">￥{{item.price}}</view>
+					<view class="good-num">
+						<view> X {{item.num}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="bottom-bar">
+	<view class="total-price">
+		<view>合计</view>
+		<view class="total-price-row">
+			<view class="price">￥{{totalPrice}}</view>
+			<view>包含运费</view>
+		</view>
+	</view>
+	<view class="buy-btn" bindtap="handlePay">支付</view>
+</view>

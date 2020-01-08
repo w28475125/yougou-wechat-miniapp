@@ -1,0 +1,13 @@
+<view class="search-header">
+	<input placeholder="请输入要搜索的的商品" bindinput="handleInput"></input>
+	<view class="close-btn" wx:if="{{value}}" bindtap="handleClose">取消</view>
+</view>
+<view class="search-list">
+	<navigator
+		url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+		class="search-item"
+		wx:for="{{searchData}}"
+		wx:key="{{item.goods_id}}">
+		{{item.goods_name}}
+	</navigator>
+</view>

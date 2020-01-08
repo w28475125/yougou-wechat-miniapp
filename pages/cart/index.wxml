@@ -1,0 +1,56 @@
+<view>
+	<button type="primary" plain class="select-address-btn" bindtap="getAddress" wx:if="{{!addRess.errMsg}}">选择地址</button>
+	<block wx:else>
+		<view class="address-row">
+			<view class="address-title">
+				<view class="address-name">{{addRess.userName}}</view>
+				<view class="address-iphone">{{addRess.telNumber}}</view>
+			</view>
+			<view class="address-address">{{addRess.allAddress}}</view>
+		</view>
+	</block>
+</view>
+
+<view class="cart-list">
+	<view class="cart-title">购物车</view>
+	<view class="cart-row" wx:if="{{cartData.length > 0 }}">
+		<view class="cart-item" wx:for="{{cartData}}" wx:key="{{item.id}}">
+			<!-- <checkbox-group> -->
+			<label class="checkbox">
+				<checkbox data-index="{{index}}" checked="{{item.isChecked}}" bindtap="handleChecked" />
+			</label>
+			<!-- </checkbox-group> -->
+			<view class="good-img">
+				<image mode="widthFix" src="{{item.image ? item.image : 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+			</view>
+			<view class="good-info">
+				<view class="good-title">{{item.name}}</view>
+				<view class="good-row">
+					<view class="good-price">￥{{item.price}}</view>
+					<view class="good-num">
+						<view bindtap="handleGoodNum" data-index="{{index}}" data-type="-1">-</view>
+						<view>{{item.num}}</view>
+						<view bindtap="handleGoodNum" data-index="{{index}}" data-type="+1">+</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:else>
+		<image mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578376396266&di=c6b759eee33d3f5fa83d8ff2ecc6466c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658"></image>
+	</view>
+</view>
+
+<view class="bottom-bar">
+	<label class="checkbox">
+		<checkbox value="0" checked="{{isAllChecked}}" bindtap="handleAllChecked"/>
+	</label>
+	<view class="total-price">
+		<view>合计</view>
+		<view class="total-price-row">
+			<view class="price">￥{{totalPrice}}</view>
+			<view>包含运费</view>
+		</view>
+	</view>
+	<view class="buy-btn" bindtap="goToPay">结算({{totalNum}})</view>
+</view>
